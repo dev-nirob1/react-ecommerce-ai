@@ -1,7 +1,17 @@
+import Hero from '../Components/Section/Hero';
+import Categories from '../Components/Section/Categories';
+import FeaturedProducts from '../Components/Section/FeaturedProducts';
+import FlashSale from '../Components/Section/FlashSale';
+import NewArrivals from '../Components/Section/NewArrivals';
+
 const Home = () => {
     return (
-        <div>
-            <h1>Home Page</h1>
+        <div className="home-page">
+            <Hero />
+            <Categories />
+            <FeaturedProducts />
+            <FlashSale />
+            <NewArrivals />
         </div>
     );
 };
