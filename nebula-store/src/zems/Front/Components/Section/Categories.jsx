@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import SectionHeader from '../../../../components/Widget/SectionHeader';
 
 const categories = [
     {
@@ -34,26 +35,18 @@ const Categories = () => {
             <div className="container mx-auto px-6">
 
                 {/* Section Header */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 md:mb-14">
-                    <div className="space-y-2">
-                        <span className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-gray-400">
-                            Explore Collections
-                        </span>
-                        <h2 className="text-3xl md:text-5xl font-black text-gray-900 uppercase tracking-tight">
-                            Shop by Category
-                        </h2>
-                    </div>
-                    <Link to="/shop" className="text-sm font-bold border-b-2 border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-all uppercase tracking-wider">
-                        View All Collections
-                    </Link>
-                </div>
+                <SectionHeader
+                    title="Shop by Category"
+                    subtitle="Explore Collections"
+                    linkText="View All Collections"
+                    linkPath="/shop"
+                />
 
                 {/* Categories Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
                     {categories.map((cat) => (
-                        <Link
+                        <div
                             key={cat.id}
-                            to={cat.path}
                             className="group relative h-[450px] md:h-[550px] overflow-hidden block"
                         >
                             {/* Background Image */}
@@ -75,12 +68,15 @@ const Categories = () => {
 
                                 {/* Hover Link Button - Animating from bottom */}
                                 <div className="overflow-hidden">
-                                    <div className="flex items-center justify-center gap-2 text-white font-bold uppercase text-sm tracking-widest translate-y-20 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                                    <Link
+                                        to={cat.path}
+                                        className="flex items-center justify-center gap-2 text-white font-bold uppercase text-sm tracking-widest translate-y-20 group-hover:translate-y-0 transition-transform duration-500 delay-100 cursor-pointer"
+                                    >
                                         Shop Now <ArrowRight size={18} />
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
-                        </Link>
+                        </div>
                     ))}
                 </div>
             </div>
