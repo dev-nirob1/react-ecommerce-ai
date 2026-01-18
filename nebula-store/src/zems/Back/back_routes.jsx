@@ -2,15 +2,39 @@ import BackLayout from './Layout/BackLayout';
 import Dashboard from './Pages/Dashboard';
 
 const back_routes = [
+    // Admin Dashboard Section
     {
-        path: '/dashboard',
+        path: '/admin',
         element: <BackLayout />,
         children: [
             {
                 path: '',
                 element: <Dashboard />,
             },
-            // Other backend routes will go here
+            /* Planned: products, categories, orders, customers, campaigns, settings */
+        ],
+    },
+    // User / Customer Dashboard Section
+    {
+        path: '/account',
+        element: <BackLayout />,
+        children: [
+            {
+                path: 'dashboard',
+                element: <Dashboard />, // Placeholder for user overview
+            },
+            {
+                path: 'orders',
+                element: <Dashboard />, // Placeholder
+            },
+            {
+                path: 'profile',
+                element: <Dashboard />, // Placeholder
+            },
+            {
+                path: 'addresses',
+                element: <Dashboard />, // Placeholder
+            },
         ],
     },
 ];
