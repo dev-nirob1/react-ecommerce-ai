@@ -46,13 +46,14 @@ const Footer = () => {
                                     <h4 className="text-xl font-bold text-white mb-2">Subscribe to our Galaxy</h4>
                                     <p className="text-xs text-gray-500 uppercase tracking-widest">Get 15% off your first order</p>
                                 </div>
-                                <div className="flex gap-2">
+                                <div className="flex flex-col sm:flex-row gap-3">
                                     <input
                                         type="email"
                                         placeholder="Enter your email"
-                                        className="flex-1 bg-white/5 border border-white/10 px-6 py-4 text-sm text-white focus:outline-none focus:border-yellow-400 transition-colors"
+                                        className="w-full sm:flex-1 bg-white/5 border border-white/10 px-6 py-4 text-sm text-white focus:outline-none focus:border-yellow-400 transition-colors"
                                     />
-                                    <button className="bg-white text-black px-6 py-4 hover:bg-yellow-400 transition-all duration-300 active:scale-95">
+                                    <button className="w-full sm:w-auto bg-white text-black px-8 py-4 hover:bg-yellow-400 transition-all duration-300 active:scale-95 flex items-center justify-center">
+                                        <span className="sm:hidden text-xs font-black uppercase tracking-widest mr-2">Subscribe</span>
                                         <ArrowRight size={20} />
                                     </button>
                                 </div>
@@ -61,33 +62,33 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Middle Section: Links Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-12 py-16">
-                    {/* Shop */}
+                {/* Middle Section: Links Grid - Refined Responsiveness */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-16 border-b border-white/5">
+                    {/* 1. Shop */}
                     <div className="space-y-6">
                         <h4 className="text-sm font-black text-white uppercase tracking-[0.2em]">Shop</h4>
                         <ul className="space-y-4 text-sm">
                             {['New Arrivals', 'Best Sellers', 'Men Collections', 'Women Collections', 'Flash Sale'].map((link) => (
                                 <li key={link}>
-                                    <Link to="/shop" className="hover:text-yellow-400 transition-colors">{link}</Link>
+                                    <Link to="/shop" className="hover:text-yellow-400 transition-colors whitespace-nowrap">{link}</Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
 
-                    {/* Information */}
+                    {/* 2. Information */}
                     <div className="space-y-6">
                         <h4 className="text-sm font-black text-white uppercase tracking-[0.2em]">Information</h4>
                         <ul className="space-y-4 text-sm">
                             {['About Us', 'Contact Us', 'Privacy Policy', 'Terms & Conditions', 'Cookie Policy'].map((link) => (
                                 <li key={link}>
-                                    <Link to="/about" className="hover:text-yellow-400 transition-colors">{link}</Link>
+                                    <Link to="/about" className="hover:text-yellow-400 transition-colors whitespace-nowrap">{link}</Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
 
-                    {/* Customer Service */}
+                    {/* 3. Customer Service */}
                     <div className="space-y-6">
                         <h4 className="text-sm font-black text-white uppercase tracking-[0.2em]">Customer Service</h4>
                         <ul className="space-y-4 text-sm">
@@ -99,21 +100,21 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Contact Info */}
+                    {/* 4. Contact Us */}
                     <div className="space-y-6">
                         <h4 className="text-sm font-black text-white uppercase tracking-[0.2em]">Contact Us</h4>
                         <ul className="space-y-5 text-sm">
-                            <li className="flex gap-4">
-                                <MapPin size={18} className="text-yellow-400 shrink-0" />
-                                <span>123 Nebula Street, Digital Galaxy, NY 10001</span>
+                            <li className="flex gap-4 items-start">
+                                <MapPin size={18} className="text-yellow-400 shrink-0 mt-0.5" />
+                                <span className="leading-relaxed">123 Nebula Street, Digital Galaxy, NY 10001</span>
                             </li>
-                            <li className="flex gap-4">
+                            <li className="flex gap-4 items-center">
                                 <Phone size={18} className="text-yellow-400 shrink-0" />
-                                <span>+1 (234) 567 890</span>
+                                <span className="leading-relaxed">+1 (234) 567 890</span>
                             </li>
-                            <li className="flex gap-4">
+                            <li className="flex gap-4 items-center">
                                 <Mail size={18} className="text-yellow-400 shrink-0" />
-                                <span>support@nebulastore.com</span>
+                                <span className="leading-relaxed break-all">support@nebulastore.com</span>
                             </li>
                         </ul>
                     </div>
