@@ -4,6 +4,8 @@ import Shop from './Pages/Shop';
 import ProductDetails from './Pages/ProductDetails';
 import Cart from './Pages/Cart';
 import Checkout from './Pages/Checkout';
+import Contact from './Pages/Contact';
+import Campaign from './Pages/Campaign';
 
 const front_routes = [
     {
@@ -29,6 +31,14 @@ const front_routes = [
             {
                 path: 'checkout',
                 element: <Checkout />,
+            },
+            {
+                path: 'contact',
+                element: <Contact />,
+            },
+            {
+                path: 'campaigns',
+                element: <Campaign />,
             },
             // Other frontend routes will go here
         ],
