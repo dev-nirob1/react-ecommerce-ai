@@ -6,6 +6,7 @@ import Cart from './Pages/Cart';
 import Checkout from './Pages/Checkout';
 import Contact from './Pages/Contact';
 import Campaign from './Pages/Campaign';
+import FlashSale from './Pages/FlashSale';
 
 const front_routes = [
     {
@@ -15,6 +16,10 @@ const front_routes = [
             {
                 path: '',
                 element: <Home />,
+            },
+            {
+                path: 'flash-sale',
+                element: <FlashSale />,
             },
             {
                 path: 'shop',
