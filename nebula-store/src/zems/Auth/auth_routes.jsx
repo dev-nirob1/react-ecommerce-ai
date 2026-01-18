@@ -1,16 +1,24 @@
 import AuthLayout from './Layout/AuthLayout';
 import Login from './Pages/Login';
+import Register from './Pages/Register';
+import ForgotPassword from './Pages/ForgotPassword';
 
 const auth_routes = [
     {
-        path: '/login',
         element: <AuthLayout />,
         children: [
             {
-                path: '',
+                path: '/login',
                 element: <Login />,
             },
-            // Other auth routes like register, forgot password
+            {
+                path: '/register',
+                element: <Register />,
+            },
+            {
+                path: '/forgot-password',
+                element: <ForgotPassword />,
+            },
         ],
     },
 ];
