@@ -2,9 +2,9 @@ import { useParams } from 'react-router-dom';
 import PageHeader from '../../../components/Widget/PageHeader';
 import SectionHeader from '../../../components/Widget/SectionHeader';
 import ProductCard from '../../../components/Widget/ProductCard';
-import ProductGallery from '../Components/ProductDetails/ProductGallery';
-import ProductInfo from '../Components/ProductDetails/ProductInfo';
-import ProductReviews from '../Components/ProductDetails/ProductReviews';
+import ProductGallery from '../Components/Widget/ProductGallery';
+import ProductInfo from '../Components/Widget/ProductInfo';
+import ProductReviews from '../Components/Widget/ProductReviews';
 
 // Mock data for a single product (In a real app, this would come from an API/Redux)
 const productData = {
