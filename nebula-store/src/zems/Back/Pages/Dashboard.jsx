@@ -1,4 +1,31 @@
+import { Link } from 'react-router-dom';
+import {
+    Package,
+    Layers,
+    ClipboardList,
+    ShoppingBag,
+    Users,
+    Star,
+    MessageSquare,
+    Megaphone,
+    BarChart3,
+    Settings as SettingsIcon
+} from 'lucide-react';
+
 const Dashboard = () => {
+    const quickLinks = [
+        { label: 'Products', path: '/admin/products', icon: <Package size={24} />, count: '48 items' },
+        { label: 'Categories', path: '/admin/categories', icon: <Layers size={24} />, count: '12 groups' },
+        { label: 'Inventory', path: '/admin/inventory', icon: <ClipboardList size={24} />, count: '2 low stock' },
+        { label: 'Orders', path: '/admin/orders', icon: <ShoppingBag size={24} />, count: '12 new' },
+        { label: 'Customers', path: '/admin/customers', icon: <Users size={24} />, count: '2.4k total' },
+        { label: 'Reviews', path: '/admin/reviews', icon: <Star size={24} />, count: '5 pending' },
+        { label: 'Support', path: '/admin/support', icon: <MessageSquare size={24} />, count: '3 open' },
+        { label: 'Campaigns', path: '/admin/campaigns', icon: <Megaphone size={24} />, count: '2 active' },
+        { label: 'Reports', path: '/admin/reports', icon: <BarChart3 size={24} />, count: 'Monthly view' },
+        { label: 'Settings', path: '/admin/settings', icon: <SettingsIcon size={24} />, count: 'Global config' },
+    ];
+
     const stats = [
         { label: 'Total Revenue', value: '$24,560', change: '+12%', color: 'text-green-600' },
         { label: 'Active Orders', value: '48', change: '+5', color: 'text-yellow-600' },
@@ -19,6 +46,26 @@ const Dashboard = () => {
                         </div>
                     </div>
                 ))}
+            </div>
+
+            {/* Quick Access Grid */}
+            <div className="space-y-6">
+                <h3 className="text-xs font-black uppercase tracking-widest text-black">Management Hub</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    {quickLinks.map((link, index) => (
+                        <Link
+                            key={index}
+                            to={link.path}
+                            className="bg-white border border-gray-100 p-6 flex flex-col items-center justify-center text-center hover:border-black hover:bg-black hover:text-white transition-all group"
+                        >
+                            <div className="text-gray-300 group-hover:text-yellow-400 transition-colors mb-3">
+                                {link.icon}
+                            </div>
+                            <p className="text-[10px] font-black uppercase tracking-widest mb-1">{link.label}</p>
+                            <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-gray-400 group-hover:text-gray-500">{link.count}</p>
+                        </Link>
+                    ))}
+                </div>
             </div>
 
             {/* Placeholder Rows */}

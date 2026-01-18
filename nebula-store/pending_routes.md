@@ -7,11 +7,11 @@ These routes will be implemented later to complete the e-commerce experience.
 - [x] Sign In / Login (`/login`)
 - [x] Forgot Password (`/forgot-password`)
 - [ ] Reset Password
-- [ ] **User Dashboard / Account (`/account`)**
-    - [ ] Account Overview (`/account/dashboard`)
-    - [ ] Order History & Tracking (`/account/orders`)
-    - [ ] Profile Settings (`/account/profile`)
-    - [ ] Saved Addresses (`/account/addresses`)
+- [x] **User Dashboard / Account (`/account`)**
+    - [x] Account Overview (`/account/dashboard`)
+    - [x] Order History & Tracking (`/account/orders`)
+    - [x] Profile Settings (`/account/profile`)
+    - [x] Saved Addresses (`/account/addresses`)
     - [ ] Wishlist (Optional - *Currently Removed*)
 
 ## 2. Trust & Informational Pages
@@ -22,7 +22,7 @@ These routes will be implemented later to complete the e-commerce experience.
 - [ ] Shipping & Returns Policy (`/shipping-policy`)
 
 ## 3. Order Management
-- [ ] Dedicated Order Success Page (`/order-confirmation/:id`)
+- [x] Dedicated Order Success Page (`/order-confirmation/:id`)
 - [ ] Public Order Tracking Page
 
 ## 4. Utility
@@ -30,27 +30,29 @@ These routes will be implemented later to complete the e-commerce experience.
 - [ ] Maintenance Mode Page
 
 ## 5. Admin / Back-Office Dashboard (`/admin/*`)
-- [ ] **Overview / Analytics**: Sales charts, order volume, visitor stats.
-- [ ] **Catalog Management**:
-    - [ ] Product List & Search
-    - [ ] Add / Edit Product (Rich Editor)
-    - [ ] Category & Sub-category Management
-    - [ ] Brand & Attribute Management
-- [ ] **Sales & Orders**:
-    - [ ] Order Management List
+- [x] **Overview / Analytics**: Sales charts, order volume, visitor stats.
+- [x] **Catalog Management**:
+    - [x] Product List & Search
+    - [x] Inventory & Stock Quick-Edit
+    - [x] Add / Edit Product (Rich Editor UI)
+    - [x] Category & Sub-category Management
+- [x] **Sales & Orders**:
+    - [x] Order Management List
     - [ ] Order Details View (Invoice, Shipping Label)
-    - [ ] Transaction Tracking
-- [ ] **Promotions**:
-    - [ ] Campaign List (Flash Sales, Seasonal)
-    - [ ] Voucher & Discount Code Generator
-- [ ] **Customers**:
-    - [ ] Customer Directory
+- [x] **Promotions & Moderation**:
+    - [x] Campaign List (Flash Sales, Seasonal)
+    - [x] Review Moderation Queue
+- [x] **Communication**:
+    - [x] Support Desk (Ticket System)
+- [x] **Customers**:
+    - [x] Customer Directory
     - [ ] Customer Detail (Purchase history, activity)
-- [ ] **Site Configuration**:
-    - [ ] General Settings (SEO, Logos, Contact)
-    - [ ] Payment Gateway Configuration (Keys for bKash/Nagad/Cards)
-    - [ ] Shipping Zone & Rate Setup
+- [x] **Site Configuration**:
+    - [x] General Settings (SEO, Logos, Contact)
+    - [x] Payment Gateway Configuration (Keys for bKash/Nagad/Cards)
+    - [x] Shipping Zone & Rate Setup
 - [ ] **Administration**:
+    - [x] Reports & Analytics Ledger
     - [ ] Admin User Management
     - [ ] Role-based Access Control (RBAC)
     - [ ] System Logs

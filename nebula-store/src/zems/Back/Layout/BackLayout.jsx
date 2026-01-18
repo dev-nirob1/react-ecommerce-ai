@@ -11,7 +11,12 @@ import {
     X,
     LogOut,
     UserCircle,
-    Bell
+    Bell,
+    MessageSquare,
+    Star,
+    ClipboardList,
+    BarChart3,
+    Layers
 } from 'lucide-react';
 
 const BackLayout = () => {
@@ -24,9 +29,14 @@ const BackLayout = () => {
     const adminNav = [
         { label: 'Overview', path: '/admin', icon: <LayoutDashboard size={20} /> },
         { label: 'Products', path: '/admin/products', icon: <Package size={20} /> },
+        { label: 'Categories', path: '/admin/categories', icon: <Layers size={20} /> },
+        { label: 'Inventory', path: '/admin/inventory', icon: <ClipboardList size={20} /> },
         { label: 'Orders', path: '/admin/orders', icon: <ShoppingBag size={20} /> },
         { label: 'Customers', path: '/admin/customers', icon: <Users size={20} /> },
+        { label: 'Reviews', path: '/admin/reviews', icon: <Star size={20} /> },
+        { label: 'Support', path: '/admin/support', icon: <MessageSquare size={20} /> },
         { label: 'Campaigns', path: '/admin/campaigns', icon: <Megaphone size={20} /> },
+        { label: 'Reports', path: '/admin/reports', icon: <BarChart3 size={20} /> },
         { label: 'Settings', path: '/admin/settings', icon: <Settings size={20} /> },
     ];
 
