@@ -68,37 +68,39 @@ const ProductDetails = () => {
                 ]}
             />
 
-            <section className="py-12 lg:py-24">
+            <section className="py-6 lg:py-12">
                 <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
                         {/* Left Side: Image Gallery */}
                         <ProductGallery images={product.images} />
 
                         {/* Right Side: Product Details */}
                         <ProductInfo product={product} />
                     </div>
+                </div>
+            </section>
 
-                    {/* Tabs / Bottom Content */}
-                    <div className="mt-32 border-t border-gray-100 pt-20">
-                        <div className="max-w-4xl mx-auto">
-                            {/* Reviews Section */}
-                            <ProductReviews />
-                        </div>
-                    </div>
+            {/* Reviews Section - Light Background */}
+            <section className="bg-gray-50/50 py-16 lg:py-24">
+                <div className="container mx-auto px-6">
+                    {/* Reviews Section */}
+                    <ProductReviews />
+                </div>
+            </section>
 
-                    {/* Related Products */}
-                    <div className="mt-32">
-                        <SectionHeader
-                            title="Complete The Look"
-                            subtitle="You might also like these premium additions"
-                            linkText="View All Products"
-                            linkPath="/shop"
-                        />
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-                            {relatedProducts.map((p) => (
-                                <ProductCard key={p.id} product={p} />
-                            ))}
-                        </div>
+            {/* Related Products */}
+            <section className="py-16 lg:py-24">
+                <div className="container mx-auto px-6">
+                    <SectionHeader
+                        title="Complete The Look"
+                        subtitle="You might also like these premium additions"
+                        linkText="View All Products"
+                        linkPath="/shop"
+                    />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+                        {relatedProducts.map((p) => (
+                            <ProductCard key={p.id} product={p} />
+                        ))}
                     </div>
                 </div>
             </section>

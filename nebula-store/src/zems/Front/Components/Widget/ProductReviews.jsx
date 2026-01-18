@@ -1,4 +1,6 @@
-import { Star, MessageSquare } from 'lucide-react';
+import { useState } from 'react';
+import { Star } from 'lucide-react';
+import ReviewCard from './ReviewCard';
 
 const reviews = [
     {
@@ -28,59 +30,73 @@ const reviews = [
 ];
 
 const ProductReviews = () => {
+    const [showAll, setShowAll] = useState(false);
+    const displayedReviews = showAll ? reviews : reviews.slice(0, 2);
+
     return (
-        <div className="space-y-12">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-gray-100 pb-8">
-                <div className="space-y-1">
-                    <h3 className="text-xl font-black uppercase tracking-tighter text-gray-900">Customer Feedback</h3>
-                    <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Based on 24 reviews</p>
-                </div>
-                <button className="bg-black text-white px-8 py-3 text-[10px] font-black uppercase tracking-widest hover:bg-gray-900 transition-all">
-                    Write a Review
-                </button>
-            </div>
-
-            <div className="space-y-10">
-                {reviews.map((review) => (
-                    <div key={review.id} className="grid grid-cols-1 md:grid-cols-12 gap-6">
-                        {/* User Info */}
-                        <div className="md:col-span-3 flex flex-row md:flex-col items-center md:items-start gap-4">
-                            <div className="w-12 h-12 bg-gray-100 flex items-center justify-center text-xs font-black uppercase tracking-widest">
-                                {review.avatar}
-                            </div>
-                            <div className="space-y-1">
-                                <h4 className="text-xs font-black uppercase tracking-widest text-gray-900">{review.user}</h4>
-                                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{review.date}</p>
-                            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            {/* 1. Sidebar: Rating Summary - Now on the right on desktop */}
+            <div className="lg:col-span-4 lg:order-last space-y-8">
+                <div className="sticky top-24 space-y-8">
+                    <div className="flex flex-col items-center justify-center bg-gray-50/50 p-8 rounded-xl border border-gray-100">
+                        <span className="text-6xl font-black text-black tracking-tighter">4.8</span>
+                        <div className="flex text-yellow-500 my-3">
+                            {[1, 2, 3, 4, 5].map((s) => (
+                                <Star key={s} size={18} fill={s <= 4.8 ? "currentColor" : "none"} strokeWidth={1} />
+                            ))}
                         </div>
-
-                        {/* Comment Content */}
-                        <div className="md:col-span-9 space-y-4">
-                            <div className="flex text-yellow-400">
-                                {[1, 2, 3, 4, 5].map((s) => (
-                                    <Star key={s} size={14} fill={s <= review.rating ? "currentColor" : "none"} />
-                                ))}
-                            </div>
-                            <p className="text-gray-500 text-sm leading-relaxed italic">
-                                "{review.comment}"
-                            </p>
-                            <div className="flex gap-4 pt-2">
-                                <button className="text-[10px] font-black uppercase tracking-widest text-gray-400 hover:text-black flex items-center gap-2">
-                                    <MessageSquare size={12} /> Reply
-                                </button>
-                                <button className="text-[10px] font-black uppercase tracking-widest text-gray-400 hover:text-black">
-                                    Helpful? Yes(2)
-                                </button>
-                            </div>
-                        </div>
+                        <p className="text-[10px] font-black uppercase tracking-widest text-gray-500">24 authenticated reviews</p>
                     </div>
-                ))}
+
+                    {/* Rating Distribution Bars */}
+                    <div className="flex flex-col space-y-3 px-2">
+                        {[
+                            { stars: 5, width: '85%' },
+                            { stars: 4, width: '10%' },
+                            { stars: 3, width: '3%' },
+                            { stars: 2, width: '1%' },
+                            { stars: 1, width: '1%' },
+                        ].map((row) => (
+                            <div key={row.stars} className="flex items-center gap-3">
+                                <span className="text-[10px] font-black text-gray-900 w-2">{row.stars}</span>
+                                <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                                    <div className="h-full bg-black transition-all duration-500" style={{ width: row.width }} />
+                                </div>
+                                <span className="text-[10px] font-bold text-gray-400 w-8">{row.width}</span>
+                            </div>
+                        ))}
+                    </div>
+
+                    <button className="w-full bg-black text-white px-8 py-4 text-xs font-black uppercase tracking-widest hover:bg-gray-800 transition-all duration-300 shadow-lg active:scale-95">
+                        Write a Review
+                    </button>
+                </div>
             </div>
 
-            <div className="flex justify-center pt-8">
-                <button className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 border-b border-gray-200 pb-1 hover:text-black hover:border-black transition-all">
-                    View All Reviews
-                </button>
+            {/* 2. Main Content: Reviews List - Now on the left on desktop */}
+            <div className="lg:col-span-8 lg:order-first space-y-10">
+                <div className="flex items-center justify-between border-b border-gray-100 pb-4">
+                    <h3 className="text-sm font-black uppercase tracking-widest text-gray-400">Customer Feedback</h3>
+                </div>
+
+                <div className="grid grid-cols-1 gap-6">
+                    {displayedReviews.map((review) => (
+                        <ReviewCard key={review.id} review={review} />
+                    ))}
+                </div>
+
+                {/* View More Toggle */}
+                <div className="flex justify-center">
+                    <button
+                        onClick={() => setShowAll(!showAll)}
+                        className="group flex flex-col items-center gap-2"
+                    >
+                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 group-hover:text-black transition-colors">
+                            {showAll ? 'Show Fewer Reviews' : 'View All Reviews'}
+                        </span>
+                        <div className="w-12 h-[1px] bg-gray-200 group-hover:w-20 group-hover:bg-black transition-all" />
+                    </button>
+                </div>
             </div>
         </div>
     );

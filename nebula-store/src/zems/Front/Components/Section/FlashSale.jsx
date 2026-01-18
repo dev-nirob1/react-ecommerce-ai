@@ -3,7 +3,7 @@ import { ArrowRight, Zap } from 'lucide-react';
 
 const FlashSale = () => {
     return (
-        <section className="relative min-h-[400px] lg:min-h-[500px] w-full overflow-hidden flex items-center py-12 lg:py-24">
+        <section className="relative min-h-[400px] lg:min-h-[500px] w-full overflow-hidden flex items-center py-12 lg:py-20">
 
             {/* 1. Background Layer - REMOVED bg-fixed to fix scroll lag */}
             <div
@@ -66,14 +66,14 @@ const FlashSale = () => {
             </div>
 
             <style>{`
-                @keyframes marquee {
-                    0% { transform: translateX(0); }
-                    100% { transform: translateX(-50%); }
-                }
-                .animate-marquee {
-                    animation: marquee 60s linear infinite;
-                }
-            `}</style>
+@keyframes marquee {
+    0 % { transform: translateX(0); }
+    100 % { transform: translateX(-50 %); }
+}
+                .animate - marquee {
+    animation: marquee 60s linear infinite;
+}
+`}</style>
         </section>
     );
 };
