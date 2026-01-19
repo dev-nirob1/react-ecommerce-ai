@@ -38,7 +38,7 @@ const ProductReviews = () => {
             {/* 1. Sidebar: Rating Summary - Now on the right on desktop */}
             <div className="lg:col-span-4 lg:order-last space-y-8">
                 <div className="sticky top-24 space-y-8">
-                    <div className="flex flex-col items-center justify-center bg-gray-50/50 p-8 rounded-xl border border-gray-100">
+                    <div className="flex flex-col items-center justify-center bg-gray-50/50 p-8 border border-gray-100">
                         <span className="text-6xl font-black text-black tracking-tighter">4.8</span>
                         <div className="flex text-yellow-500 my-3">
                             {[1, 2, 3, 4, 5].map((s) => (
@@ -58,11 +58,11 @@ const ProductReviews = () => {
                             { stars: 1, width: '1%' },
                         ].map((row) => (
                             <div key={row.stars} className="flex items-center gap-3">
-                                <span className="text-[10px] font-black text-gray-900 w-2">{row.stars}</span>
-                                <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                                <span className="text-[12px] font-black text-gray-900 w-2">{row.stars}</span>
+                                <div className="flex-1 h-1.5 bg-gray-100 overflow-hidden">
                                     <div className="h-full bg-black transition-all duration-500" style={{ width: row.width }} />
                                 </div>
-                                <span className="text-[10px] font-bold text-gray-400 w-8">{row.width}</span>
+                                <span className="text-[12px] font-bold text-gray-400 w-8">{row.width}</span>
                             </div>
                         ))}
                     </div>

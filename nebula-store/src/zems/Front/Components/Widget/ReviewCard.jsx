@@ -2,7 +2,7 @@ import { Star } from 'lucide-react';
 
 const ReviewCard = ({ review }) => {
     return (
-        <div className="bg-white border border-gray-100 p-6 sm:p-8 rounded-xl hover:shadow-sm transition-shadow">
+        <div className="bg-white border border-gray-100 p-6 sm:p-8 hover:shadow-sm transition-shadow">
             <div className="flex flex-col sm:flex-row sm:items-start gap-8">
                 {/* Left Side: User Info */}
                 <div className="flex items-center sm:flex-col sm:items-start gap-4 sm:w-32 shrink-0">
