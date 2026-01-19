@@ -40,7 +40,7 @@ const Login = () => {
                 <div className="space-y-2">
                     <div className="flex justify-between items-center">
                         <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Password</label>
-                        <Link to="/forgot-password" size={14} className="text-[10px] font-black uppercase tracking-widest text-gray-300 hover:text-black transition-colors">Forgot?</Link>
+                        <Link to="/forgot-password" className="text-[10px] font-black uppercase tracking-widest text-gray-300 hover:text-black transition-colors">Forgot?</Link>
                     </div>
                     <div className="relative">
                         <input
@@ -79,3 +79,4 @@ const Login = () => {
 };
 
 export default Login;
+

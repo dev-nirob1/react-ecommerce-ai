@@ -89,7 +89,7 @@ const Hero = () => {
                                         </div>
                                         <Link
                                             to={`/product/${slide.id}`}
-                                            className="w-full sm:w-auto bg-black text-white px-10 py-4 rounded-full text-sm font-bold flex items-center justify-center gap-2 hover:bg-gray-800 transition-all active:scale-95"
+                                            className="w-full sm:w-auto bg-black text-white px-10 py-4 text-sm font-bold flex items-center justify-center gap-2 hover:bg-gray-800 transition-all active:scale-95"
                                         >
                                             SHOP NOW <ArrowRight size={18} />
                                         </Link>

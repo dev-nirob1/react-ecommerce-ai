@@ -6,7 +6,7 @@ import PaymentMethods from '../Components/Widget/PaymentMethods';
 
 const Checkout = () => {
     const [paymentMethod, setPaymentMethod] = useState('bkash');
-    const [isOrdered, setIsOrdered] = useState(false);
+    const [isOrdered, setIsOrdered] = useState(true);
 
     // Mock summary data
     const summary = {

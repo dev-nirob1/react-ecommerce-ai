@@ -17,10 +17,6 @@ const AuthLayout = () => {
                 </div>
             </main>
 
-            {/* Subtle Brand Footer */}
-            <footer className="p-8 text-center bg-white">
-                <p className="text-[10px] font-black uppercase tracking-[0.5em] text-gray-200 select-none">Nebula Systems // Premium Core</p>
-            </footer>
         </div>
     );
 };
